@@ -1,88 +1,115 @@
+/* Reset default margin, padding, and box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Set a base font for the entire page */
 html {
-    font-family: sans-serif;
-    font-size: 10px;
+    font-family: Tw Cen MT, sans-serif;
+    font-size: 12px;
 }
+
+/* Style the body with a background and center content */
 body {
     width: 100%;
     min-height: 100vh;
-    font-size: 1.6rem;
-    line-height: 140%;
+    font-size: 1rem;
+    line-height: 1.4;
     background-color: #efefef;
-    opacity: 0.3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     opacity: 1;
-    display: grid;
-    place-items: center;
 }
+
+/* Card styling */
 .card {
     background: #fff;
     color: #111820;
-    margin: 15rem auto;
-    width: 90%;
+    margin: 5rem auto;
     max-width: 1200px;
     min-height: 30rem;
     border-radius: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
 }
 
+/* Hero section */
 .hero {
     display: flex;
     justify-content: center;
     transform: translateY(-55%);
 }
+
 .hero .img {
-    filter: drop-shadow(0rem 1.5rem rgba(0,0,0,0.1));
+    filter: drop-shadow(0 1.5rem rgba(0, 0, 0, 0.1));
     transition: 0.3s ease-out;
 }
+
 .card:hover .img {
-    filter: drop-shadow(0rem 2.5rem rgba(0,0,0,0.1));
+    filter: drop-shadow(0 2.5rem rgba(0, 0, 0, 0.1));
 }
 
+/* Title styling */
 .title {
     text-align: center;
-    font-size: 5rem;
+    font-size: 2.5rem;
     padding: 1rem;
 }
 
+/* Accordion container */
 .acc-container {
     padding: 4rem 2rem;
 }
+
+/* Accordion button styling */
 .acc-btn {
     width: 100%;
-    padding: 1.6rem 2rem;
-    font-size: 1.6rem;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
     cursor: pointer;
-    background: inherit;
+    background: none;
+    color: #111820;
     border: none;
     outline: none;
     text-align: left;
-    transition: all 0.5s linear;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+/* Arrow icon for accordion button */
 .acc-btn:after {
-    content: "\27A4";
+    content: "\25B6"; /* Right-pointing arrow */
     color: #007A37;
+    font-size: 1.2rem;
     font-weight: bold;
-    float: right;
-    transition: all 0.3s linear;
+    transition: transform 0.3s ease-in-out;
 }
+
+/* Rotate the arrow for open accordions */
 .acc-btn.is-open:after {
     transform: rotate(90deg);
 }
+
+/* Hover and open styles for accordion button */
 .acc-btn:hover, .acc-btn.is-open {
     color: #007A37;
     font-weight: bold;
 }
 
+/* Accordion content */
 .acc-content {
     max-height: 0;
-    color: #111820;
-    font-size: 1.5rem;
-    margin: 0 2rem;
-    padding-left: 1rem;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
     border-bottom: 1px solid #007A37;
+    padding-left: 1rem;
+    margin: 0 0.5rem;
+    font-size: 1.1rem;
+    color: #111820;
 }
+
